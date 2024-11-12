@@ -13,12 +13,12 @@ public class RacingTrack {
     private RacingTrack(){
         racing = new HashMap<>();
     }
-    public RacingTrack of(List<Car> carList){
+    public static RacingTrack of(List<Car> carList){
         RacingTrack racingTrack = new RacingTrack();
         for(Car car : carList){
             racingTrack.addRacingTrack(car,CarPosition.of());
         }
-        return new RacingTrack();
+        return racingTrack;
     }
     public void addRacingTrack(Car car, CarPosition carPosition){
         racing.put(car,carPosition);
@@ -27,6 +27,10 @@ public class RacingTrack {
     public void moveCar(Car car){
         CarPosition carPosition = racing.get(car);
         carPosition.plusPosition();
+    }
+
+    public Integer size(){
+        return racing.size();
     }
 
 }
