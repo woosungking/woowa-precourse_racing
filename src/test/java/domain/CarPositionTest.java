@@ -26,4 +26,17 @@ public class CarPositionTest {
         // then: position은 0이어야 함
         Assertions.assertEquals(expected, carPositionDto.getPosition(), "초기 위치는 0이어야 합니다.");
     }
+    @Test
+    @DisplayName("plusPosition 호출 시 위치 값이 1 증가해야 한다")
+    public void shouldIncreasePositionByOneWhenPlusPositionCalled() {
+        // given: CarPosition 객체가 초기 상태(0)로 생성됨(beforeEach)
+        Integer expected = 1;
+
+        // when: 위치 증가 메서드 호출
+        carPosition.plusPosition();
+        CarPositionDto carPositionDto = carPosition.carPositionDto();
+
+        // then: position의 값은 1이어야 함
+        Assertions.assertEquals(expected, carPositionDto.getPosition(), "위치 값은 1이어야 합니다.");
+    }
 }
