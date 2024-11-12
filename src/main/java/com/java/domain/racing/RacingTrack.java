@@ -3,6 +3,9 @@ package com.java.domain.racing;
 import com.java.domain.Car;
 import com.java.domain.CarList;
 import com.java.domain.position.CarPosition;
+import com.java.dto.CarDto;
+import com.java.dto.CarPositionDto;
+import com.java.dto.PositionDto;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,12 +16,12 @@ public class RacingTrack {
     private RacingTrack(){
         racing = new HashMap<>();
     }
-    public RacingTrack of(List<Car> carList){
+    public static RacingTrack of(List<Car> carList){
         RacingTrack racingTrack = new RacingTrack();
         for(Car car : carList){
             racingTrack.addRacingTrack(car,CarPosition.of());
         }
-        return new RacingTrack();
+        return racingTrack;
     }
     public void addRacingTrack(Car car, CarPosition carPosition){
         racing.put(car,carPosition);
@@ -27,6 +30,16 @@ public class RacingTrack {
     public void moveCar(Car car){
         CarPosition carPosition = racing.get(car);
         carPosition.plusPosition();
+    }
+
+    public Integer size(){
+        return racing.size();
+    }
+
+    public CarPositionDto getCarPositionDTO(Car car){
+        CarDto carDto = car.carDto();
+        PositionDto positionDto = racing.get(car).carPositionDto();
+        return CarPositionDto.of(carDto.getCarName(), positionDto.getPosition());
     }
 
 }

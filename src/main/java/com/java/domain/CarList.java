@@ -18,4 +18,10 @@ public class CarList {
     public void addCar(Car car){
         carList.add(car);
     }
+    public void addAllCar(List<Car> cars){
+        carList.addAll(cars);
+    }
+    public Integer size(){
+        return carList.size();
+    }
 }
