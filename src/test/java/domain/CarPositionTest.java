@@ -28,4 +28,18 @@ public class CarPositionTest {
         Assertions.assertEquals(expected, carList.size());
     }
 
+    @Test
+    @DisplayName("CarList 생성 테스트")
+    public void carCreateTest(){
+        //given
+        List<Car> cars = new ArrayList<>();
+        cars.add(Car.of("K3"));
+        cars.add(Car.of("K5"));
+        cars.add(Car.of("K7"));
+        cars.add(Car.of("K9"));
+        //when
+        carList.addAllCar(cars);
+        //then
+        Assertions.assertEquals(cars.size(), carList.size());
+    }
 }
