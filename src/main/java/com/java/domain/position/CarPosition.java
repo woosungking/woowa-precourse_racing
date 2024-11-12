@@ -1,6 +1,6 @@
 package com.java.domain.position;
 
-import com.java.dto.CarPositionDto;
+import com.java.dto.PositionDto;
 
 public class CarPosition {
     private Integer position;
@@ -16,8 +16,8 @@ public class CarPosition {
         this.position++;
     }
 
-    public CarPositionDto carPositionDto(){
-        return new CarPositionDto(this.position);
+    public PositionDto carPositionDto(){
+        return new PositionDto(this.position);
     }
 
 }

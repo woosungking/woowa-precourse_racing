@@ -1,7 +1,7 @@
 package domain;
 
 import com.java.domain.position.CarPosition;
-import com.java.dto.CarPositionDto;
+import com.java.dto.PositionDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -21,10 +21,10 @@ public class CarPositionTest {
         Integer expected = 0;
 
         // when: 객체를 DTO로 변환하여 초기 위치 확인
-        CarPositionDto carPositionDto = carPosition.carPositionDto();
+        PositionDto positionDto = carPosition.carPositionDto();
 
         // then: position은 0이어야 함
-        Assertions.assertEquals(expected, carPositionDto.getPosition(), "초기 위치는 0이어야 합니다.");
+        Assertions.assertEquals(expected, positionDto.getPosition(), "초기 위치는 0이어야 합니다.");
     }
     @Test
     @DisplayName("plusPosition 호출 시 위치 값이 1 증가해야 한다")
@@ -34,9 +34,9 @@ public class CarPositionTest {
 
         // when: 위치 증가 메서드 호출
         carPosition.plusPosition();
-        CarPositionDto carPositionDto = carPosition.carPositionDto();
+        PositionDto positionDto = carPosition.carPositionDto();
 
         // then: position의 값은 1이어야 함
-        Assertions.assertEquals(expected, carPositionDto.getPosition(), "위치 값은 1이어야 합니다.");
+        Assertions.assertEquals(expected, positionDto.getPosition(), "위치 값은 1이어야 합니다.");
     }
 }
