@@ -3,6 +3,9 @@ package com.java.domain.racing;
 import com.java.domain.Car;
 import com.java.domain.CarList;
 import com.java.domain.position.CarPosition;
+import com.java.dto.CarDto;
+import com.java.dto.CarPositionDto;
+import com.java.dto.PositionDto;
 
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +34,12 @@ public class RacingTrack {
 
     public Integer size(){
         return racing.size();
+    }
+
+    public CarPositionDto getCarPositionDTO(Car car){
+        CarDto carDto = car.carDto();
+        PositionDto positionDto = racing.get(car).carPositionDto();
+        return CarPositionDto.of(carDto.getCarName(), positionDto.getPosition());
     }
 
 }
