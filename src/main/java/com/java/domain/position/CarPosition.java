@@ -12,7 +12,7 @@ public class CarPosition {
         return new CarPosition();
     }
 
-    public void goStraight(){
+    public void plusPosition(){
         this.position++;
     }
 
