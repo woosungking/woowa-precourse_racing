@@ -2,14 +2,14 @@ package com.java.domain.position;
 
 import com.java.dto.PositionDto;
 
-public class CarPosition {
+public class Position {
     private Integer position;
 
-    private CarPosition(){
+    private Position(){
         this.position = 0;
     }
-    public static CarPosition of(){
-        return new CarPosition();
+    public static Position of(){
+        return new Position();
     }
 
     public void plusPosition(){

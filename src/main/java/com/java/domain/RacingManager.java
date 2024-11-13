@@ -6,6 +6,8 @@ import com.java.domain.view.Retries;
 import com.java.dto.CarPositionDto;
 import com.java.dto.RetriesDto;
 
+import java.util.List;
+
 public class RacingManager {
     private RacingTrack racingTrack;
     private Retries retries;
@@ -30,6 +32,10 @@ public class RacingManager {
 
     public RetriesDto getRetriesDto(){
         return this.retries.getRetriesDto();
+    }
+
+    public List<Car> getAllCars(){
+        return racingTrack.getAllCars();
     }
 
 }
