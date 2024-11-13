@@ -24,5 +24,14 @@ public class RacingServiceImpl implements RacingService{
         racingManager.moveCarInTrack(car);
         racingManager.reduceRetries();
     }
+    @Override
+    public void tryMoveCarWithRandomChance(RacingManager racingManager, Car car){
+        int number = Randoms.pickNumberInRange(1, 9);
+        if(number>4){
+            advanceRound(racingManager,car);
+            return;
+        }
+        advanceRound(racingManager);
+    }
 
 }
