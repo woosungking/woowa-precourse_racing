@@ -9,4 +9,6 @@ import java.util.List;
 public interface RacingService {
 
     public RacingManager racingInitializer(List<Car> cars, Retries retries);
+    public void advanceRound(RacingManager racingManager, Car car);
+    public void advanceRound(RacingManager racingManager);
 }

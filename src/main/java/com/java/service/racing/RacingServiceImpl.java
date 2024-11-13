@@ -15,6 +15,14 @@ public class RacingServiceImpl implements RacingService{
         RacingTrack racingTrack = RacingTrack.of(cars); // 레이싱 트렉에 자동차랑, 위치선정,
         return RacingManager.of(racingTrack, retries);
     }
-
+    @Override
+    public void advanceRound(RacingManager racingManager) {
+        racingManager.reduceRetries();
+    }
+    @Override
+    public void advanceRound(RacingManager racingManager, Car car) {
+        racingManager.moveCarInTrack(car);
+        racingManager.reduceRetries();
+    }
 
 }
