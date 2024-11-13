@@ -1,7 +1,7 @@
 package domain;
 
-import com.java.domain.Car;
-import com.java.domain.CarList;
+import com.java.domain.car.Car;
+import com.java.domain.car.CarList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

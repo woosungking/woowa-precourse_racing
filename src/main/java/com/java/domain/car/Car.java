@@ -1,4 +1,4 @@
-package com.java.domain;
+package com.java.domain.car;
 
 import com.java.dto.CarDto;
 

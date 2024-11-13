@@ -1,6 +1,6 @@
 package domain;
 
-import com.java.domain.Car;
+import com.java.domain.car.Car;
 import com.java.domain.racing.RacingTrack;
 import com.java.dto.CarPositionDto;
 import org.junit.jupiter.api.Assertions;

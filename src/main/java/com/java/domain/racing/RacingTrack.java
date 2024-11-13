@@ -1,7 +1,6 @@
 package com.java.domain.racing;
 
-import com.java.domain.Car;
-import com.java.domain.CarList;
+import com.java.domain.car.Car;
 import com.java.domain.position.CarPosition;
 import com.java.dto.CarDto;
 import com.java.dto.CarPositionDto;
@@ -13,6 +12,7 @@ import java.util.Map;
 
 public class RacingTrack {
     private Map<Car, CarPosition> racing;
+
     private RacingTrack(){
         racing = new HashMap<>();
     }
