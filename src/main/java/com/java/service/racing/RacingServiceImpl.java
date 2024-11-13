@@ -33,5 +33,16 @@ public class RacingServiceImpl implements RacingService{
         }
         advanceRound(racingManager);
     }
+    @Override
+    public void executeAllRounds(RacingManager racingManager) {
+        List<Car> carList = racingManager.getAllCars();
+        Integer retries = racingManager.getRetriesDto().getRetries();
+        if (retries != 0) {
+            for (Car car : carList) {
+                tryMoveCarWithRandomChance(racingManager, car);
+            }
+            executeAllRounds(racingManager);
+        }
 
+    }
 }

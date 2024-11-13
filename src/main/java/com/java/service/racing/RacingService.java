@@ -12,4 +12,5 @@ public interface RacingService {
     public void advanceRound(RacingManager racingManager, Car car);
     public void advanceRound(RacingManager racingManager);
     public void tryMoveCarWithRandomChance(RacingManager racingManager, Car car);
+    public void executeAllRounds(RacingManager racingManager);
 }
