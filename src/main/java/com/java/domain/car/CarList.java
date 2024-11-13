@@ -32,4 +32,12 @@ public class CarList {
         }
         throw new RuntimeException(); // 임의 처리.
     }
+
+    public List<Car> findAllCar(){
+        List<Car> cars = new ArrayList<>();
+        for(Car car : carList){
+            cars.add(car);
+        }
+        return cars;
+    }
 }
