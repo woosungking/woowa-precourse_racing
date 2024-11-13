@@ -1,6 +1,6 @@
 package domain;
 
-import com.java.domain.Car;
+import com.java.domain.car.Car;
 import com.java.dto.CarDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
