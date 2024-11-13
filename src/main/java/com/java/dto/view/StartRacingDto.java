@@ -10,4 +10,10 @@ public class StartRacingDto {
     public static StartRacingDto of(String carNames, Integer retries){
         return new StartRacingDto(carNames,retries);
     }
+    public String getCarNames(){
+        return this.carNames;
+    }
+    public Integer getRetries(){
+        return this.retries;
+    }
 }
