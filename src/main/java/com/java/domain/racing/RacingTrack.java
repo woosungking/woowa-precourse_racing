@@ -6,6 +6,7 @@ import com.java.dto.CarDto;
 import com.java.dto.CarPositionDto;
 import com.java.dto.PositionDto;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,8 +29,7 @@ public class RacingTrack {
     }
 
     public void moveCar(Car car){
-        Position position = racing.get(car);
-        position.plusPosition();
+        racing.get(car).plusPosition();
     }
 
     public Integer size(){
@@ -40,6 +40,10 @@ public class RacingTrack {
         CarDto carDto = car.carDto();
         PositionDto positionDto = racing.get(car).carPositionDto();
         return CarPositionDto.of(carDto.getCarName(), positionDto.getPosition());
+    }
+
+    public List<Car> getAllCars(){
+        return new ArrayList<>(racing.keySet());
     }
 
 }
